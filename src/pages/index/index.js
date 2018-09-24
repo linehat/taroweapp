@@ -3,7 +3,7 @@ import { View, Button, Text, OpenData } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtAvatar } from 'taro-ui'
 
-import { add, minus, asyncAdd } from '../../modules/counter'
+import { add, minus, list } from '../../modules/counter'
 
 import './index.less'
 
@@ -18,7 +18,7 @@ import './index.less'
     dispatch(minus())
   },
   asyncAdd () {
-    dispatch(asyncAdd())
+    dispatch(list())
   }
 }))
 class Index extends Component {

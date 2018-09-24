@@ -1,10 +1,15 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
+import { combineEpics } from "redux-observable"
+import counter, { counterEpic } from './counter'
+import { messageEpic } from './message'
 
 
-
-export const rootRedcer = combineReducers({
+export const rootReducer = combineReducers({
   counter
 })
 
-export default rootRedcer
+export const rootEpic = combineEpics(
+  counterEpic,
+  messageEpic,
+)
+export default rootReducer
